@@ -17,7 +17,10 @@
         size="6"
         *ngFor="let photo of photoService.photos; index as position"
       >
-        <ion-img [src]="photo.webviewPath"></ion-img>
+        <ion-img
+          [src]="photo.webviewPath"
+          (click)="showActionSheet(photo, position)"
+        ></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -27,6 +30,4 @@
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
